@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblPlayerTurn = new System.Windows.Forms.Label();
             this.butResetGame = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTheWinner = new System.Windows.Forms.Label();
@@ -42,8 +44,6 @@
             this.butGame5 = new System.Windows.Forms.Button();
             this.butGame2 = new System.Windows.Forms.Button();
             this.butGame1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblPlayerTurn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.plGame.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +61,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(295, 566);
             this.panel1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Impact", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Brown;
+            this.label2.Location = new System.Drawing.Point(96, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 39);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Turn : ";
+            // 
+            // lblPlayerTurn
+            // 
+            this.lblPlayerTurn.AutoSize = true;
+            this.lblPlayerTurn.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerTurn.Font = new System.Drawing.Font("Impact", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerTurn.Location = new System.Drawing.Point(81, 150);
+            this.lblPlayerTurn.Name = "lblPlayerTurn";
+            this.lblPlayerTurn.Size = new System.Drawing.Size(110, 39);
+            this.lblPlayerTurn.TabIndex = 13;
+            this.lblPlayerTurn.Text = "Player1";
             // 
             // butResetGame
             // 
@@ -130,7 +153,7 @@
             this.butGame9.Text = "?";
             this.butGame9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.butGame9.UseVisualStyleBackColor = false;
-            this.butGame9.Click += new System.EventHandler(this.butGame9_Click);
+            this.butGame9.Click += new System.EventHandler(this.button_click);
             // 
             // butGame8
             // 
@@ -147,7 +170,7 @@
             this.butGame8.Text = "?";
             this.butGame8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.butGame8.UseVisualStyleBackColor = false;
-            this.butGame8.Click += new System.EventHandler(this.butGame8_Click_1);
+            this.butGame8.Click += new System.EventHandler(this.button_click);
             // 
             // butGame7
             // 
@@ -164,7 +187,7 @@
             this.butGame7.Text = "?";
             this.butGame7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.butGame7.UseVisualStyleBackColor = false;
-            this.butGame7.Click += new System.EventHandler(this.butGame7_Click);
+            this.butGame7.Click += new System.EventHandler(this.button_click);
             // 
             // butGame6
             // 
@@ -181,7 +204,7 @@
             this.butGame6.Text = "?";
             this.butGame6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.butGame6.UseVisualStyleBackColor = false;
-            this.butGame6.Click += new System.EventHandler(this.butGame6_Click);
+            this.butGame6.Click += new System.EventHandler(this.button_click);
             // 
             // butGame3
             // 
@@ -198,7 +221,7 @@
             this.butGame3.Text = "?";
             this.butGame3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.butGame3.UseVisualStyleBackColor = false;
-            this.butGame3.Click += new System.EventHandler(this.butGame3_Click_1);
+            this.butGame3.Click += new System.EventHandler(this.button_click);
             // 
             // butGame4
             // 
@@ -215,7 +238,7 @@
             this.butGame4.Text = "?";
             this.butGame4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.butGame4.UseVisualStyleBackColor = false;
-            this.butGame4.Click += new System.EventHandler(this.butGame4_Click_1);
+            this.butGame4.Click += new System.EventHandler(this.button_click);
             // 
             // butGame5
             // 
@@ -232,7 +255,7 @@
             this.butGame5.Text = "?";
             this.butGame5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.butGame5.UseVisualStyleBackColor = false;
-            this.butGame5.Click += new System.EventHandler(this.butGame5_Click);
+            this.butGame5.Click += new System.EventHandler(this.button_click);
             // 
             // butGame2
             // 
@@ -249,7 +272,7 @@
             this.butGame2.Text = "?";
             this.butGame2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.butGame2.UseVisualStyleBackColor = false;
-            this.butGame2.Click += new System.EventHandler(this.butGame2_Click);
+            this.butGame2.Click += new System.EventHandler(this.button_click);
             // 
             // butGame1
             // 
@@ -266,30 +289,7 @@
             this.butGame1.Text = "?";
             this.butGame1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.butGame1.UseVisualStyleBackColor = false;
-            this.butGame1.Click += new System.EventHandler(this.butGame1_Click_1);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Impact", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Brown;
-            this.label2.Location = new System.Drawing.Point(96, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 39);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Turn : ";
-            // 
-            // lblPlayerTurn
-            // 
-            this.lblPlayerTurn.AutoSize = true;
-            this.lblPlayerTurn.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlayerTurn.Font = new System.Drawing.Font("Impact", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayerTurn.Location = new System.Drawing.Point(81, 150);
-            this.lblPlayerTurn.Name = "lblPlayerTurn";
-            this.lblPlayerTurn.Size = new System.Drawing.Size(110, 39);
-            this.lblPlayerTurn.TabIndex = 13;
-            this.lblPlayerTurn.Text = "Player1";
+            this.butGame1.Click += new System.EventHandler(this.button_click);
             // 
             // Form1
             // 
